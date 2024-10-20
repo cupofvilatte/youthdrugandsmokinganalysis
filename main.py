@@ -1,15 +1,20 @@
+# import pandas to use csv easily
 import pandas as pd
+
+# import tools to create graphs from the data
 import matplotlib.pyplot as plt
 import plotly.express as px
 
+# save variable of file path for convenience
 file_path = './youth_smoking_drug_data_10000_rows_expanded.csv'
-data = pd.read_csv(file_path)
 
+# gender related to smoking study
 def gender_smoking_study(csv_file):
     data = pd.read_csv(csv_file)
 
     gender_smoking_average = data.groupby('Gender')['Smoking_Prevalence'].mean()
 
+    # conditional statement to print whether men or women are dominant in the smoking industry
     if gender_smoking_average['Male'] > gender_smoking_average['Female']:
         result = "Male"
     elif gender_smoking_average['Female'] > gender_smoking_average['Male']:
@@ -17,25 +22,32 @@ def gender_smoking_study(csv_file):
     else:
         result = "Equal"
 
+    # print who is more likely as well as basic data about men and women related to smoking
     print(f"{result} is more likely to smoke.")
     print(gender_smoking_average)
 
+# function to build a visualization of the gender/smoking function
 def vizualize_gender_smoking(csv_file):
     data = pd.read_csv(csv_file)
 
     gender_smoking_average = data.groupby('Gender')['Smoking_Prevalence'].mean().reset_index()
 
+    # create a bar chart
+    # chat gpt helped understand syntax for these
     fig = px.bar(gender_smoking_average, x='Gender', y='Smoking_Prevalence',
                  title='Average Smoking Prevalence by Gender',
                  labels={'Smoking_Prevalence': 'Average Smoking Prevalence', 'Gender': 'Gender'})
     
     fig.show()
 
+# question two of whether and how school activities are realted to trying drugs.
 def school_activity_involement_study(csv_file):
     data = pd.read_csv(csv_file)
 
+    # percent of those who are involved in school programs
     involved_avg = data[data['School_Programs'] == 'Yes']['Drug_Experimentation'].mean()
 
+    # percent of those who are not involved in school programs
     not_involved_avg = data[data['School_Programs'] == 'No']['Drug_Experimentation'].mean()
 
     if not_involved_avg != 0:  # Avoid division by zero
@@ -43,16 +55,19 @@ def school_activity_involement_study(csv_file):
     else:
         percent_difference = float('inf')
 
+    # print results
     print(f"Average drug experimentation with school programs: {involved_avg:.2f}")
     print(f"Average drug experimentation without school programs: {not_involved_avg:.2f}")
     print(f"Percentage difference: {percent_difference:.2f}%")
 
+# visualizial representation of the relationship between activies and drug use
 def visualize_school_activity(csv_file):
     data = pd.read_csv(csv_file)
 
     involved_avg = data[data['School_Programs'] == 'Yes']['Drug_Experimentation'].mean()
     not_involved_avg = data[data['School_Programs'] == 'No']['Drug_Experimentation'].mean()
 
+    # chat gpt helped for syntax
     fig = px.bar(x=['Involved', 'Not Involved'], y=[involved_avg, not_involved_avg],
                  title='Average Drug Experimentation Based on School Activity Involvement',
                  labels={'x': 'Involvement', 'y': 'Average Drug Experimentation'})
