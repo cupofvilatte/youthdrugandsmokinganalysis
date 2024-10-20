@@ -1,0 +1,14 @@
+Question #1
+What gender is more likely to smoke? Form a hypothesis about why this might be the case.
+    Based on this study, Females are more likely to smoke, but the difference is so slight that it may reasonably be dismissed. I think this is an interesting find, as it is not what I would have expected. I would have expected men to be far more likely to smoke than women. In some way, this goes to show the biases we may have against men in our culture, to assume that they are more likely to be involved in harmful activities such as drug, tobacco, and alchohol abuse.
+    I would like to note that research I did on drug use in preparatoin for this study suggested that men are more likely to use tobacco. In a further study I would like to understand better the conditions of this data to understand what causes this shift, even if it seems slight.
+
+
+Question #2
+What difference is made, and to what degree, based on a difference in school activity involvement?
+    There was about a 1.4% percent difference. This number seems small, but compared to the scope of the data, which has 10000 rows, a slight shift such as this is significant, because 1.4% of 10000 is around 140, which is quite a few more. We notice this change occurs such that those who are not involved in school programs are more likely to experiment with drugs.
+    I would like to note, to give charity to those who don't attend school programs, that the shift is, once again, not as dramatic as I would have expected. Students can find uplifting things to do that are not sponsored by their school.
+
+Question #3
+How do mental health and drug experimentation correlate?
+    The results from this study show little-to-no relation. These results confused me more than any others. In a deeper study I would like to understand the intricacies of how these parts work together. I would think there to be a very high correlation. Perhaps there are just stronger forces at work when it comes to dragging young people down in such a manner. Perhaps I would consider how factors such as wealth and Substance Education affect these.
