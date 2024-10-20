@@ -13,14 +13,16 @@ def gender_smoking_study(csv_file):
     data = pd.read_csv(csv_file)
 
     gender_smoking_average = data.groupby('Gender')['Smoking_Prevalence'].mean()
-
-    # conditional statement to print whether men or women are dominant in the smoking industry
-    if gender_smoking_average['Male'] > gender_smoking_average['Female']:
-        result = "Male"
-    elif gender_smoking_average['Female'] > gender_smoking_average['Male']:
-        result = "Female"
-    else:
-        result = "Equal"
+    result = gender_smoking_average.idxmax() # identify gender with highest avg smoking
+    
+    ## Explanation of what the above code is essentially doing
+    # # conditional statement to print whether men or women are dominant in the smoking industry
+    # if gender_smoking_average['Male'] > gender_smoking_average['Female']:
+    #     result = "Male"
+    # elif gender_smoking_average['Female'] > gender_smoking_average['Male']:
+    #     result = "Female"
+    # else:
+    #     result = "Equal"
 
     # print who is more likely as well as basic data about men and women related to smoking
     print(f"{result} is more likely to smoke.")
